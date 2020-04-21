@@ -1,0 +1,10 @@
+---
+- hosts: devices
+  tasks:
+    - name: Salvage log files from Raspi
+      become: true
+      synchronize:  src={{ item }} dest=/tmp/ mode=pull
+      with_items:
+      - "/var/lib/tftpboot"
+      - "/tftp"
+  

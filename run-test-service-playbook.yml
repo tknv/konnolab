@@ -1,0 +1,14 @@
+---
+- hosts: devices
+  vars:
+    iperf_srv: "192.168.1.101" # 192.168.30.100
+  tasks:
+    - name: Run tftp server
+      become: true
+      shell: /etc/init.d/tftpd-hpa start
+    - name: Run iperf
+      become: false
+      shell: iperf -c {{iperf_srv}} -p {{iperf_port}} -b 3M -t 36000 --bidir -u
+      async: 1800 # 60*30 - 30 minuits, run in background
+      poll: 0
+  

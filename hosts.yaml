@@ -1,0 +1,35 @@
+devices:
+  hosts:
+    PC:
+      ansible_host: 192.168.1.102
+      ansible_port: 22
+      ansible_user: pi
+      ansible_password: passwd
+      tftp_host: 192.168.1.101
+      ap_host: 192.168.1.100
+      ap_port: 22
+      ap_user: admin
+      ap_password: admin123
+      iperf_port: 5001
+    raspi1:
+      ansible_host: 192.168.1.101
+      ansible_port: 22
+      ansible_user: pi
+      ansible_password: passwd
+      tftp_host: 192.168.1.101
+      ap_host: 192.168.1.100
+      ap_port: 22
+      ap_user: admin
+      ap_password: admin123
+      iperf_port: 5002
+    raspi2:
+      ansible_host: 192.168.1.101
+      ansible_port: 22
+      ansible_user: pi
+      ansible_password: passwd
+      tftp_host: 192.168.1.101
+      ap_host: 192.168.1.100
+      ap_port: 22
+      ap_user: admin
+      ap_password: admin123
+      iperf_port: 5002

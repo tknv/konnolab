@@ -1,0 +1,26 @@
+---
+- hosts: devices
+  tasks:
+    - name: Install tftpd-hpa
+      become: true
+      apt:
+        name: tftpd-hpa
+    - name: Install iperf
+      become: true
+      apt:
+        name: iperf3
+    - name: Install pip
+      become: true
+      apt:
+        name: python3-pip
+    - name: Install netmiko
+      become: false
+      shell: pip3 install netmiko
+    - name: Copy job file
+      become: true
+      copy: 
+        src: ./tasks
+        dest: /
+        owner: pi
+        group: pi
+        mode: 0755
