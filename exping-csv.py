@@ -56,7 +56,7 @@ for c in b:
     _hit_time = tz.localize(timedate)
     hit_time = _hit_time.strftime('%Y/%m/%d %H:%M:%S')
     if c[0]==10:
-        print('%s ping lost 10 times continusouly' % hit_time)
+        print('%s ping lost 10 times continuously' % hit_time)
     else:
         print('{} ping lost :'.format(hit_time)
         + "*" * c[0]

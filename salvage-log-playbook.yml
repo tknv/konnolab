@@ -1,6 +1,9 @@
 ---
 - hosts: devices
   tasks:
+     - name: get techsupport from AP 
+       become: false
+       shell: /usr/bin/python3 /tasks/get_tech.py {{ap_host}} {{ap_port}} {{ap_user}} {{ap_password}} {{tftp_host}} {{timestamp}}
     - name: Salvage log files from Raspi
       become: true
       synchronize:  src={{ item }} dest=/tmp/ mode=pull

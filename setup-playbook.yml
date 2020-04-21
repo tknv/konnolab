@@ -8,7 +8,7 @@
     - name: Install iperf
       become: true
       apt:
-        name: iperf3
+        name: iperf
     - name: Install pip
       become: true
       apt:

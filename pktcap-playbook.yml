@@ -4,10 +4,10 @@
     timestamp: "{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}"
   tasks:
     - name: configure logging on for debugging
-      become: true
+      become: false
       shell: /usr/bin/python3 /tasks/configure_ap.py {{ap_host}} {{ap_port}} {{ap_user}} {{ap_password}}
     - name: Run pktcap on each AP
-      become: true
+      become: false
       shell: /usr/bin/python3 /tasks/run_pktcap.py {{ap_host}} {{ap_port}} {{ap_user}} {{ap_password}} {{tftp_host}} {{timestamp}}
       async: 1800 # 60*30 - 30 minuits
       poll: 0
