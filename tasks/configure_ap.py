@@ -3,8 +3,8 @@ import netmiko
 from netmiko.ssh_exception import NetMikoTimeoutException, NetMikoAuthenticationException
 
 an_ap = {
-    'device_type': 'extreme_wing_ssh',
-    'ip': sys.argv[1],
+    'device_type': 'extreme_wing',
+    'host': sys.argv[1],
     'port': sys.argv[2],
     'username': sys.argv[3],
     'password': sys.argv[4],

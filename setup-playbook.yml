@@ -14,8 +14,9 @@
       apt:
         name: python3-pip
     - name: Install netmiko
-      become: false
-      shell: pip3 install netmiko
+      become: true
+      apt:
+        name: python3-netmiko
     - name: Copy job file
       become: true
       copy: 
